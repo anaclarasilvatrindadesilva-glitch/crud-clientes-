@@ -1,0 +1,149 @@
+############  ###################  ############
+############  CONFIGURAÇÕES GERAIS ############
+############  ###################  ############
+
+Programação com Bootstrap + Angular + NodeJS
+* Instalar NodeJS (web)
+
+* instalar Angular no projeto (terminal)
+    npm install -g @angular/cli
+
+* Instalar Angular Material no projeto (terminal)
+    ng add @angular/material
+
+* Criar um projeto/programa (terminal)
+    ng new "nomeProjeto" --no-standalone
+
+* Executar o projeto/programa
+    ng serve -o
+############  ############
+** Configurações iniciais no projeto
+
+- Excluir o conteúdo de: /src/app/app.html
+    adicionar o comando: <router-outlet></router-outlet>
+
+- Instalar o Bootstrap no projeto
+    npm install bootstrap
+- Adicionar biblioteca do Bootstrap no projeto: /src/style.scss
+    @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+** Criar componentes no projeto
+    ng generate component componentes/"nome do componente"
+    ng generate component componentes/button
+
+** Adicionar o componente button no projeto: /button/button.html
+
+** Adicionar estilo ao componente button: /button/button.scss
+
+** Chamar o componente button: /app/app.html
+    <app-button></app-button>
+
+#######
+Configurar magem para o component button: /app/app.html
+
+#######
+Configurar o button para ser DINÂMICO: /button/button.ts
+    - Criar uma variável tipo string -> label do button
+    - Chamamos a variável em button.html {{txtButton}}
+    - Adicionar propriedade input ao elemento button: button.ts
+    - Atribuir vários valores para o label do txtButton: app.html
+
+############ ############ ############ ############
+############  PROGRAMAÇÃO COMEÇA AQUI  ############
+############ ############ ############ ############
+1 - Criar componente pages para pagina de login
+    ng generate component pages/login
+
+2 - Criar ROTA para o arquivo inicial -> login: 
+            -> /app/app-routing-modules.ts
+            -> ...const routes: Rules = [];
+
+3 - Configurar a interface de login + CSS: login.html + login.scss
+
+4 - Criar a estrutura do componente home: ng g c pages/home
+
+    4.1 - Criar a rota para home    --> app-routing-modules.ts
+
+5 - Direcionar o login para home após autenticação
+    >> editar input e button >> login.html
+     <input [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" class="input-form" type="text" placeholder="digite seu usuário">
+        <div class="btn-area">
+          <app-button txtButton="ACESSAR" (click)="login()"></app-button>
+        </div>
+
+    ** Adicionar módulo do Angular no projeto --> app-modules.ts
+
+    5.1 Criar a variável 'userName' ->> login.ts
+    export class Login {
+       userName: string;
+    }
+
+    ** habilitar a variável inicializar vazia ->> tsconfig.json
+       add >> "strictPropertyInitialization": false,
+
+6 - Criar a função login() ->> login.ts
+        export class Login {
+            userName: string;
+            login(){
+                sessionStorage.setItem('user', this.userName);
+            }
+        }
+
+7 - Criar a rota para página home ->> login.ts
+        export class Login {
+            ....
+            constructor(private rota: Router){}
+            login(){
+                ....
+                this.rota.navigate(['home']);
+            }
+        }
+
+8 - Criar o compoente menu
+        ng g c componentes/menu
+        Apontar o 'path' para menu ->> app-routing-module.ts 
+    
+    8.1 - add menu dentro de home ->> home.html
+            <app-menu></app-menu>
+    
+    8.2 - Programar e estilizar menu da página home ->> menu.html e menu.scss
+          Adicionar bibliotecas de icones ao projeto ->> app.modules.ts
+
+9 - importar a biblioteca 'material' do @angular ->> app-modules.ts
+        import { MatIconModule } from '@angular/material/icon';
+        import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+        imports: [
+            ...
+            MatIconModule,
+            MatProgressSpinnerModule,         
+        ],
+
+10 - Programar menu.html e menu.scss
+
+11 - Criar 'clientes' em /pages
+        ng g c pages/clientes
+    
+    11.1 - Chamar menu em clientes.html
+           <app-menu></app-menu>
+
+################
+12 - Construção da interface honme --> home.html / home.scss
+
+################
+13 - Construção da interface clientes  --> clientes.html / clientes.scss
+    13.1 - Adicionar campo de pesquisa
+    13.2 - Adicionar botão para cadastro de novos clientes
+    13.3 - Adicionar estrutura da tabela para listar os clientes cadastrados
+    13.4 - Conectar tabela ao banco de dados
+    13.5 - Configurar estrutura da tabela
+
+
+################
+14 - 
+
+
+
+
+
+

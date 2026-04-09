@@ -1,0 +1,85 @@
+<app-menu></app-menu>
+<!-- Criar a linha principal para receber os elementos de home -->
+<div class="container-fluid pt-4" >
+    <div class="row">
+        <!-- coluna/card esquerdo -->
+        <div class="col-8">
+            <!-- Card Marketing   -->
+            <div class="cardSuperior">
+                <div class="row">          
+                    <div class="col-8" >
+                        <h1 class="titulo">CRUD Clientes</h1>
+                        <h3 class="subtitulo">Mais <span>eficiência</span> na gestão dos <span>clientes</span> e suas necessidades.
+                            Com <span>CRUD Clientes</span> seu trabalho fica mais rápido e preciso.
+                            Simplifique a <span>gestão</span> de Clientes de sua empresa!
+                            Dashboard com informações gerais do sistema.
+                        </h3>
+                    </div>
+                    <div class="col-4" >
+                      <img src="/assets/dashboard.png" alt="123" width="100%">
+                    </div>
+                </div>
+            </div> 
+            <!-- Card meio - Gráficos -->
+            <div class="row">
+                <!-- Card meio - ESQUERDA -->
+                <div class="col-6">
+                    <div class="card-info">
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="texto-card">Total de clientes cadastrados</p>
+                                <p class="numero-card">80</p>
+                                <p class="destaque-card">+5 clientes adicionados hoje</p>
+                            </div>
+                            <div class="col-4 d-flex flex-column">
+                                <!-- Para o spinner funcionar deve-se fazer o import da biblioteca -> app-module.ts --> 
+                                <!-- Biblioteca: import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; -->
+                                <!-- Caso seja necessário instale a biblioteca de materiais do Angular no projeto novamente -->
+                                <!-- ng add @angular/material  -->
+                                <mat-progress-spinner mode="determinate" [value]="45" diameter="80"></mat-progress-spinner>
+                                <p class="info-spinner">80/150</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            
+                <!-- Card meio - DIREITA -->
+                <div class="col-6">
+                    <div class="card-info">
+                       <div class="row">
+                            <div class="col-8">
+                                <p class="texto-card">Total de clientes ativos</p>
+                                <p class="numero-card">68</p>
+                                <p class="destaque-card">+2 clientes este mês</p>
+                            </div>
+                            <div class="col-4" >
+                               <mat-progress-spinner mode="determinate" [value]="45" diameter="80"></mat-progress-spinner>
+                                <p class="info-spinner">80/150</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>    
+        </div>
+
+        <!-- Card Info/User - DIREITA -->
+        <div class="col-4">
+            <div class="card-info">
+                <div class="container-perfil">
+                    <img src="" alt="">
+                    <h6>Alessandro</h6>
+                    <h6>09102460</h6>
+                    <h6>Desenvolvedor Full-Stack</h6>
+                    <mat-icon>location_on</mat-icon>Sete Lagoas - MG
+                </div>
+                
+                <hr class="hr">
+                <p class="texto">Sua frase....</p>
+                <hr class="hr">
+                
+                <mat-icon>person</mat-icon>Perfil do usuário
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+.menu{
+    width: 230px;
+    height: 100vh;
+    background-color: rgba(5, 99, 102, 0.867);
+    display: block;
+    float: left;
+    padding: 10px 0px;
+    box-shadow: 4px 0px 10px 4px #5e5b5b;
+    margin-right: 16px;
+
+    ul{padding: 0px;}
+}
+
+.txtLogo{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+li{
+    font-size: 14px;
+    font-weight: bold;
+    color: #cccaca;
+    padding: 14px 24px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    transition: 0.3s linear all;
+
+    &:hover{
+        background: #5c5b5b;
+        cursor: pointer;
+    }
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+    width: 230px;
+}

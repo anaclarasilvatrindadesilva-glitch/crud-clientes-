@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+
+<!-- 1 Criar o container da página -->
+ <div class="container-fluid pt-4">
+    <!-- primeira linha de conteúdo: titulo -->
+    <div class="row">
+        <!-- coluna inteira -->
+        <div class="col-12">
+            <h1 class="titulo">Cadastro de clientes</h1>
+            <h2 class="subtitulo"> Gerenciar usuários: adicionar, editar ou excluir</h2>    
+        </div>
+    </div>
+
+     <!-- Segunda linha de conteúdo: +Clientes e filtro -->
+    <div class="row">
+        <!-- coluna inteira -->
+        <div class="col-12">
+            <!-- botão para adicionar novos usuários -->
+            <app-button txtButton="+ Cadastrar" (click)="openModalAddUser()" class="float-end"></app-button>
+
+            <!-- Filtro para pesquisa de clientes -->
+            <mat-form-field>
+                <mat-label>Pesquisar cliente</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+           
+                <!-- Tabela com paginador -->
+                
+
+               
+                
+            </mat-form-field>
+        </div>
+    </div>   
+ </div>

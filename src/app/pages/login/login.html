@@ -1,0 +1,22 @@
+<!-- 3 interface de login do sistema -->
+
+<!-- Criar uma div para desabilitar imagem em MOBILE -->
+ <!-- para interfaces menores, display=none -->
+<!-- para interfaces  maiores, display exibe e bloqueia-->
+ <div class="area-login-background"></div>
+
+ <!-- div para a área de login -->
+  <div class="area-form">
+    <form>
+        <!-- Título do form -->
+        <h1 class="titulo">CRUD de CLIENTES</h1>
+        <!-- subtitulo do form -->
+        <h2 class="subtitulo">Gestão de Clientes</h2>
+        <input [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" class="input-form" type="text" placeholder="digite seu usuário">
+        <div class="btn-area">
+          <app-button txtButton="ACESSAR" (click)="login()"></app-button>
+        </div>
+    </form>
+
+    <p class="footer">2026 - Desenvolvido por Xulambs SA © Todos os direitos reservados</p>
+  </div>
