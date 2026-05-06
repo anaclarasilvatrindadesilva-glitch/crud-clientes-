@@ -1,1 +1,102 @@
-<p>modal-form-user works!</p>
+<div class="container">
+    <h1 class="titulo">Cadastro de Clientes</h1>
+    <h2 class="subtitulo">Preencha o formulário com os dados do clientes</h2>
+
+    <!-- area para formulario com inputs -->
+    <form class="row" [formGroup]="formUser">
+        <div class="col-12">
+            <!-- inserir os inputs @angular -->
+            <!-- angular material -->
+
+            <!-- cpf -->
+            <mat-form-field class="example-full-width">
+                <mat-label>CPF</mat-label>
+                <input type="text" matInput formUser="cpf" placeholder="000.000.00-00">
+                @if (formUser.controls['cpf'].valid) {
+                <mat-error>CPF inválido</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- nome -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput formUser="name" placeholder="Nome do cliente">
+                @if (formUser.controls['name'].valid) {
+                <mat-error>Digite um nome válido</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- email -->
+            <mat-form-field class="example-full-width">
+                <mat-label>E-mail</mat-label>
+                <input type="email" matInput formUser="email" placeholder="Email*">
+                @if (formUser.controls['email'].valid) {
+                <mat-error>Digite um email válido</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- telefone -->
+            <mat-form-field class="example-full-width">
+                <mat-label></mat-label>
+                <input type="text" matInput formUser="fone" placeholder="(00)00000-0000">
+                @if (formUser.controls['fone'].valid) {
+                <mat-error>Digite um telefone válido</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- cep -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Cep</mat-label>
+                <input type="text" matInput formUser="cep" placeholder="00000-000">
+                @if (formUser.controls['cep'].valid) {
+                <mat-error>Digite um cep válido</mat-error>
+                }
+            </mat-form-field>
+
+            <!--rua -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Rua</mat-label>
+                <input type="text" matInput formUser="rua" placeholder="Nome da rua">
+                @if (formUser.controls['rua'].valid) {
+                <mat-error>Digite o nome da rua</mat-error>
+                }
+            </mat-form-field>
+            
+            <!-- numero -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Num</mat-label>
+                <input type="text" matInput formUser="Num" placeholder="Digite o numero da casa">
+                @if (formUser.controls['Num'].valid) {
+                <mat-error>Digite o numero da casa</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- Complemento -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Compl</mat-label>
+                <input type="text" matInput formUser="Compl" placeholder="Compl.">
+                @if (formUser.controls['Compl'].valid) {
+                <mat-error>Digite o complemento</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- bairro -->
+            <mat-form-field class="example-full-width">
+                <mat-label>bairro</mat-label>
+                <input type="text" matInput formUser="bairro" placeholder="Digite seu bairro">
+                @if (formUser.controls['Bairro'].valid) {
+                <mat-error>Digite o bairro</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- cidade -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Cidade</mat-label>
+                <input type="text" matInput formUser="cidade" placeholder="Digite sua cidade">
+                @if (formUser.controls['cidade'].valid) {
+                <mat-error>Digite sua cidade</mat-error>
+                }
+            </mat-form-field>
+        </div>
+    </form>
+</div>
